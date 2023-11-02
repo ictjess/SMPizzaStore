@@ -1,0 +1,29 @@
+﻿@model List<SMPizzaStore.Models.ToppingModel>
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        if (item.IsAddedToPizza)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Remove from Pizza", "RemoveToppingFromPizza", new { id = item.Id })
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Add to Pizza", "AddToppingToPizza", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    }
+    </table>

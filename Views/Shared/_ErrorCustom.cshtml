@@ -1,0 +1,52 @@
+﻿@model SMPizzaStore.Models.ErrorModel
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>An error occurred</h2>
+<p>Sorry, an error has occurred. Please try again later.</p>
+
+
+<table class="table">
+    <tr>
+        <td>
+            PAGE
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Page)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ACTIVITY
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Activity)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            PROMPT
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Prompt)
+        </td>
+    </tr>
+    <tr>
+    </tr>
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

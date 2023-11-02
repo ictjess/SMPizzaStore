@@ -1,0 +1,20 @@
+﻿@model Tuple<List<SMPizzaStore.Models.ToppingModel>, List<SMPizzaStore.Models.ToppingModel>>
+
+@{
+    ViewBag.Title = "Manage Pizza and Toppings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage Pizza and Toppings</h2>
+
+<h2>Available Toppings</h2>
+@Html.Partial("PizzaToppings", Model.Item1)
+
+<h2>Toppings Added to  @ViewBag.PizzaName Pizza</h2>
+@Html.Partial("PizzaToppings", Model.Item2)
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
